@@ -293,19 +293,18 @@ body {
 }
 .img-quinta6 {
     position: absolute;
-    right: 500px;
-    top: 8350px;
-    background: rgba(0, 0, 0, 0.3);
+    right: 500px;     /* spostata a destra */
+    top: 8350px;   /* più in alto */
+       
+	background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(8px);
     padding: 10px;
     border-radius: 15px;
-    overflow: hidden; /* evita che elementi escano dal contenitore */
-}
-
+  
+	}
 .img-quinta6 video {
-     width: 889px;
+    width: 889px;
     height: 460px;
-    height: auto; 
     object-fit: cover;
     border-radius: 10px;
     display: block;
@@ -313,7 +312,7 @@ body {
 
 .video-thumb {
     position: absolute;
-    top: 10px;
+     top: 10px;
     left: 10px;
     width: 889px;
     height: 460px;
@@ -323,13 +322,14 @@ body {
     z-index: 5;
 }
 
+/* Custom controls centrati */
 .custom-controls {
     position: absolute;
-    bottom: 10px;
+    bottom: 20px;
     left: 50%;
-    transform: translateX(-50%);
-    width: 90%;        /* adattivo al video */
-    max-width: 700px;  /* limite massimo */
+    transform: translateX(-50%); /* centra orizzontalmente */
+    width: 700px; /* larghezza fissa */
+    height: 50px; /* altezza fissa */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -354,7 +354,6 @@ body {
     display: inline-block;
 }
 
-/* Barra interna (rosso) */
 .progress {
     width: 0;
     height: 100%;
@@ -362,7 +361,7 @@ body {
     border-radius: 5px;
 }
 
-/* Pulsanti play/pause e fullscreen */
+/* Pulsante play/pause */
 .play-pause, .fullscreen {
     width: 40px;
     height: 40px;
@@ -371,7 +370,6 @@ body {
     background: rgba(255,255,255,0.2);
     color: white;
     border-radius: 50%;
-    cursor: pointer;
 }
 
 /* Volume slider */
@@ -380,49 +378,42 @@ body {
     height: 6px;
 }
 
-/* FULLSCREEN FIX */
-.img-quinta6.fullscreen video {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
+
+/* FULLSCREEN VIDEO */
+.img-quinta6.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw !important;
     height: 100vh !important;
-    z-index: 1000 !important;
+    z-index: 1000;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-quinta6.fullscreen video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
     border-radius: 0 !important;
 }
 
-/* Nascondi copertina quando in fullscreen o in play */
-.img-quinta6 video.playing + .video-thumb,
 .img-quinta6.fullscreen .video-thumb {
-    display: none !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    z-index: 5;
 }
 
-/* Menu risoluzione ⚙ */
-.resolution-menu {
-    position: absolute;
-    right: 10px;
-    bottom: 60px;
-    background: rgba(0,0,0,0.8);
-    padding: 5px 10px;
-    border-radius: 8px;
-    display: none;
-    color: white;
-    z-index: 15;
+.img-quinta6.fullscreen .custom-controls {
+    width: 90% !important;
+    bottom: 30px !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+    z-index: 1001;
 }
-
-.resolution-menu button {
-    display: block;
-    margin: 5px 0;
-    padding: 3px 6px;
-    background: rgba(255,255,255,0.2);
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-}
-
-
-
-
-
 
