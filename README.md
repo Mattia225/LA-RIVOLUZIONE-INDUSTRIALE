@@ -2,4 +2,4 @@
 
 Here is an example image:
 
-![Logo](immagine/logo.png)
+![Logo](immagine/logo5.png)
