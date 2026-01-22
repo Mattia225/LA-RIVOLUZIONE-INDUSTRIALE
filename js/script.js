@@ -6,6 +6,7 @@ const fullscreenBtn = playerWrapper.querySelector('.fullscreen');
 const controls = playerWrapper.querySelector('.custom-controls');
 
 let hideControlsTimeout;
+let isFullscreen = false;
 
 // Mostra/nascondi controlli al movimento del mouse
 function showControls() {
@@ -16,54 +17,89 @@ function showControls() {
     }, 2000);
 }
 
-// Play/Pause e nascondi copertina
+// Aggiorna la barra progresso
+const progressBar = controls.querySelector('.progress-bar');
+const progress = progressBar.querySelector('.progress');
+
+function updateProgress() {
+    const percent = (video.currentTime / video.duration) * 100;
+    progress.style.width = percent + '%';
+}
+
+video.addEventListener('timeupdate', updateProgress);
+
+// Play/Pause e nascondi copertina (mai ricompare)
 playPauseBtn.addEventListener('click', () => {
-    thumb.style.display = 'none';
     if (video.paused) {
         video.play();
         playPauseBtn.textContent = '⏸';
+        thumb.style.display = 'none';
     } else {
         video.pause();
         playPauseBtn.textContent = '▶';
     }
 });
 
-// Aggiorna lo stato del video quando finisce
+// Fine video
 video.addEventListener('ended', () => {
-    video.pause();
     playPauseBtn.textContent = '▶';
 });
 
-// Mostra controlli quando si muove il mouse
+// Mostra controlli al movimento del mouse
 playerWrapper.addEventListener('mousemove', showControls);
 
+// Barra progresso click/drag
+progressBar.addEventListener('click', (e) => {
+    const rect = progressBar.getBoundingClientRect();
+    const percent = (e.clientX - rect.left) / rect.width;
+    video.currentTime = percent * video.duration;
+    thumb.style.display = 'none';
+});
+
+progressBar.addEventListener('mousedown', () => {
+    thumb.style.display = 'none';
+});
+
 // Fullscreen toggle
-let isFullscreen = false;
 fullscreenBtn.addEventListener('click', () => {
     if (!isFullscreen) {
-        video.style.position = 'fixed';
-        video.style.top = 0;
-        video.style.left = 0;
-        video.style.width = '100vw';
-        video.style.height = '100vh';
-        video.style.zIndex = 1000;
+        playerWrapper.classList.add('fullscreen');
         isFullscreen = true;
     } else {
-        video.style.position = 'static';
-        video.style.width = '889px';
-        video.style.height = '460px';
-        video.style.zIndex = 1;
+        playerWrapper.classList.remove('fullscreen');
         isFullscreen = false;
     }
 });
 
-// Optional: selezione risoluzione dal menu
+// Menu risoluzione
 const resolutionMenu = document.createElement('div');
-resolutionMenu.style.position = 'absolute';
-resolutionMenu.style.right = '50px';
-resolutionMenu.style.bottom = '50px';
-resolutionMenu.style.background = 'rgba(0,0,0,0.7)';
-resolutionMenu.style.padding = '5px 10px';
-resolutionMenu.style.borderRadius = '8px';
-resolutionMenu.style.display = 'none';
-resolutionMenu.style.c
+resolutionMenu.classList.add('resolution-menu');
+playerWrapper.appendChild(resolutionMenu);
+
+// Esempio di pulsanti risoluzione (puoi aggiungere tutte quelle che vuoi)
+['144p','240p','360p','480p','720p','1080p'].forEach(res => {
+    const btn = document.createElement('button');
+    btn.textContent = res;
+    btn.addEventListener('click', () => {
+        console.log('Cambia risoluzione a', res);
+        // qui puoi mettere la logica di cambiare src video se hai più file
+    });
+    resolutionMenu.appendChild(btn);
+});
+
+// Apri/chiudi menu risoluzione
+const settingsBtn = document.createElement('button');
+settingsBtn.textContent = '⚙';
+settingsBtn.classList.add('settings-btn');
+controls.appendChild(settingsBtn);
+
+settingsBtn.addEventListener('click', () => {
+    resolutionMenu.style.display = resolutionMenu.style.display === 'block' ? 'none' : 'block';
+});
+
+// Nascondi menu se clic fuori
+document.addEventListener('click', (e) => {
+    if (!resolutionMenu.contains(e.target) && e.target !== settingsBtn) {
+        resolutionMenu.style.display = 'none';
+    }
+});
