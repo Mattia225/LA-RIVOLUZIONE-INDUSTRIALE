@@ -1,4 +1,4 @@
-# Image Demo
+# my project on THE INDUSTRIAL REVOLUTION
 
 Here is an example image:
 
