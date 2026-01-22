@@ -1,0 +1,381 @@
+/* FONT LOCALE */
+@font-face {
+    font-family: "Pompiere";
+    src: url("fonts/Pompiere-Regular.ttf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "texgyrebonum";
+    src: url("fonts/texgyrebonum-regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* RESET BASE */
+html, body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+	
+}
+
+body {
+    background-image: url("immagine/paper.png");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+    background-position: top left;
+}
+
+.rigaimmagini {
+    display: flex;
+    align-items: flex-start;         /* immagini in alto */
+    justify-content: space-between;  /* immagini ai lati estremi */
+    width: 100%;
+    padding: 0 20px;                 /* margini laterali */
+    box-sizing: border-box;
+}
+
+.img-sinistra, .img-destra {
+    height: 300px;      /* altezza fissa uguale per entrambe */
+    width: auto;        /* la larghezza si adatta per mantenere proporzioni */
+    object-fit: cover;  /* riempie l'altezza senza deformare */
+    display: block;
+    margin: 0;
+}
+
+/* TESTO CENTRALE */
+.testo-centro {
+    flex: 1;               /* occupa spazio tra le immagini */
+    text-align: center;
+    padding: 0 20px;
+}
+
+.testo-centro h1 {
+    font-family: "texgyrebonum", Arial, sans-serif;
+    font-size: 129px;
+    margin: 0 0 10px 0;
+    color: #512e1a;
+}
+
+.testo-centro h2 {
+    font-family: "Pompiere", Arial, sans-serif;
+    font-size: 61.5px;
+    margin: 0;
+    color: #512e1a;
+}
+
+/* IMMAGINE GRANDE SOTTO */
+.img-basso-sinistra {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 700px;   /* larghezza fissa */
+    height: 500px;  /* altezza fissa */
+    object-fit: cover; /* mantiene proporzioni ritagliando se serve */
+}
+
+/* RESPONSIVE PER MOBILE */
+@media (max-width: 800px) {
+    .rigaimmagini {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .img-sinistra, .img-destra {
+        max-height: 150px;
+    }
+
+    .testo-centro h1 {
+        font-size: 80px;
+    }
+
+    .testo-centro h2 {
+        font-size: 40px;
+    }
+
+    .img-basso-sinistra {
+        width: 90%;
+        height: auto;
+    }
+}
+.img-quarta {
+    position: absolute;
+    right: 100px;     /* spostata a destra */
+    bottom: 100px;   /* più in alto */
+    width: 500px;    /* più piccola */
+    height: auto;    /* mantiene proporzioni */
+    object-fit: contain;
+}
+/* Muro invisibile che spinge tutto giù, senza coprire il background */
+.muro-invisibile-grande {
+    width: 100%;              /* occupa tutta la larghezza */
+    height: 600px;            /* altezza che spinge la seconda pagina giù */
+    pointer-events: none;     /* non blocca click */
+    background-color: transparent; /* invisibile */
+}
+.img-basso-sinistra1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 700px;   /* larghezza fissa */
+    height: 500px;  /* altezza fissa */
+    object-fit: cover; /* mantiene proporzioni ritagliando se serve */
+	top: 1550px;
+}
+.img-quarta1 {
+    position: absolute;
+    right: 10px;     /* spostata a destra */
+    top: 1770px;   /* più in alto */
+    width: 500px;    /* più piccola */
+    height: auto;    /* mantiene proporzioni */
+    object-fit: contain;
+}
+.img-quinta {
+    position: absolute;
+    right: 1440px;     /* spostata a destra */
+    top: 1380px;   /* più in alto */
+    width: 500px;    /* più piccola */
+    height: auto;    /* mantiene proporzioni */
+    object-fit: contain;
+}
+.img-basso-sinistra2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 700px;   /* larghezza fissa */
+    height: 500px;  /* altezza fissa */
+    object-fit: cover; /* mantiene proporzioni ritagliando se serve */
+	top: 2390px;
+}
+.img-quarta2 {
+    position: absolute;
+    right: 500px;     /* spostata a destra */
+    top: 2560px;   /* più in alto */
+    width: 500px;    /* più piccola */
+    height: auto;    /* mantiene proporzioni */
+    object-fit: contain;
+}
+.img-quinta1 {
+    position: absolute;
+    right: 10px;     /* spostata a destra */
+    top: 2560px;   /* più in alto */
+    width: 500px;    /* più piccola */
+    height: auto;    /* mantiene proporzioni */
+    object-fit: contain;
+}
+.muro-invisibile-grande1 {
+    width: 100%;              /* occupa tutta la larghezza */
+    height: 800px;            /* altezza che spinge la seconda pagina giù */
+    pointer-events: none;     /* non blocca click */
+    background-color: transparent; /* invisibile */
+}
+.img-basso-sinistra3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 700px;   /* larghezza fissa */
+    height: 500px;  /* altezza fissa */
+    object-fit: cover; /* mantiene proporzioni ritagliando se serve */
+	top: 3560px;
+}
+.img-quarta3 {
+    position: absolute;
+    right: 500px;     /* spostata a destra */
+    top: 3680px;   /* più in alto */
+    width: 500px;    /* più piccola */
+    height: auto;    /* mantiene proporzioni */
+    object-fit: contain;
+}
+.img-quinta2 {
+    position: absolute;
+    right: 150px;     /* spostata a destra */
+    top: 3400px;   /* più in alto */
+    width: 500px;    /* più piccola */
+    height: auto;    /* mantiene proporzioni */
+    object-fit: contain;
+	
+	
+}
+.img-basso-sinistra4 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 700px;   /* larghezza fissa */
+    height: 500px;  /* altezza fissa */
+    object-fit: cover; /* mantiene proporzioni ritagliando se serve */
+	top: 5000px;
+}
+.img-quarta3 {
+    position: absolute;
+    right: 500px;     /* spostata a destra */
+    top: 3680px;   /* più in alto */
+    width: 500px;    /* più piccola */
+    height: auto;    /* mantiene proporzioni */
+    object-fit: contain;
+}
+.img-quinta3 {
+    position: absolute;
+    right: 0px;     /* spostata a destra */
+    top: 5000px;   /* più in alto */
+    width: 500px;    /* più piccola */
+    height: auto;    /* mantiene proporzioni */
+    object-fit: contain;
+	}
+	.img-basso-sinistra5 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 700px;   /* larghezza fissa */
+    height: 500px;  /* altezza fissa */
+    object-fit: cover; /* mantiene proporzioni ritagliando se serve */
+	top: 6100px;
+}
+.img-quarta3 {
+    position: absolute;
+    right: 500px;     /* spostata a destra */
+    top: 3680px;   /* più in alto */
+    width: 500px;    /* più piccola */
+    height: auto;    /* mantiene proporzioni */
+    object-fit: contain;
+}
+.img-quinta4 {
+    position: absolute;
+    right: 120px;     /* spostata a destra */
+    top: 6100px;   /* più in alto */
+    width: 500px;    /* più piccola */
+    height: auto;    /* mantiene proporzioni */
+    object-fit: contain;
+	}
+		.img-basso-sinistra6 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 700px;   /* larghezza fissa */
+    height: 500px;  /* altezza fissa */
+    object-fit: cover; /* mantiene proporzioni ritagliando se serve */
+	top: 7350px;
+}
+.img-quarta3 {
+    position: absolute;
+    right: 500px;     /* spostata a destra */
+    top: 3680px;   /* più in alto */
+    width: 500px;    /* più piccola */
+    height: auto;    /* mantiene proporzioni */
+    object-fit: contain;
+}
+.img-quinta5 {
+    position: absolute;
+    right: 120px;     /* spostata a destra */
+    top: 7200px;   /* più in alto */
+    width: 500px;    /* più piccola */
+    height: auto;    /* mantiene proporzioni */
+    object-fit: contain;
+	}
+			.img-basso-sinistra7 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 700px;   /* larghezza fissa */
+    height: 500px;  /* altezza fissa */
+    object-fit: cover; /* mantiene proporzioni ritagliando se serve */
+	top: 8750px;
+}
+.img-quarta3 {
+    position: absolute;
+    right: 500px;     /* spostata a destra */
+    top: 3680px;   /* più in alto */
+    width: 500px;    /* più piccola */
+    height: auto;    /* mantiene proporzioni */
+    object-fit: contain;
+}
+.img-quinta6 {
+    position: absolute;
+    right: 500px;     /* spostata a destra */
+    top: 8350px;   /* più in alto */
+       
+	background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    padding: 10px;
+    border-radius: 15px;
+  
+	}
+.img-quinta6 video {
+    width: 889px;
+    height: 460px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.video-thumb {
+    position: absolute;
+     top: 10px;
+    left: 10px;
+    width: 889px;
+    height: 460px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+/* Custom controls centrati */
+.custom-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%); /* centra orizzontalmente */
+    width: 700px; /* larghezza fissa */
+    height: 50px; /* altezza fissa */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: rgba(0,0,0,0.5);
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+/* Barra progresso */
+.progress-bar {
+    flex: 1;
+    height: 6px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.progress {
+    width: 0;
+    height: 100%;
+    background: red;
+    border-radius: 5px;
+}
+
+/* Pulsante play/pause */
+.play-pause, .fullscreen {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border-radius: 50%;
+}
+
+/* Volume slider */
+.volume {
+    width: 100px;
+    height: 6px;
+}
+
+
