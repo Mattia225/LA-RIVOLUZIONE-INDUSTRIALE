@@ -307,10 +307,9 @@ body {
            /* mantiene proporzioni */
     object-fit: contain;
     border-radius: 10px;
-
     display: block;
-	
-	.video-thumb {
+	}
+.video-thumb {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -320,3 +319,4 @@ body {
     cursor: pointer;
     z-index: 5;
 }
+
