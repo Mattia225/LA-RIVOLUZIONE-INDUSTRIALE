@@ -379,42 +379,4 @@ body {
 }
 
 
-/* FULLSCREEN VIDEO */
-.img-quinta6.fullscreen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw !important;
-    height: 100vh !important;
-    z-index: 1000;
-    background: rgba(0,0,0,0.9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.img-quinta6.fullscreen video {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain;
-    border-radius: 0 !important;
-}
-
-.img-quinta6.fullscreen  {
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    border-radius: 0 !important;
-    z-index: 5;
-}
-
-.img-quinta6.fullscreen .custom-controls {
-    width: 90% !important;
-    bottom: 30px !important;
-    left: 50% !important;
-    transform: translateX(-50%);
-    z-index: 1001;
-}
-
 
