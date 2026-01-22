@@ -313,8 +313,8 @@ body {
 
 .video-thumb {
     position: absolute;
-    top: 10;
-    left: 10;
+    top: 10px;
+    left: 10px;
     width: 889px;
     height: 460px;
     object-fit: cover;
@@ -420,6 +420,7 @@ body {
     color: white;
     cursor: pointer;
 }
+
 
 
 
