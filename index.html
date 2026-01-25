@@ -191,6 +191,7 @@ Un grande edificio dove lavorano tante persone insieme con le macchine.<br> Chi 
 
     <div class="testo-centro">
         <h1 style="font-size: 61.5px;" >Grazie per l'attenzione!</h1>
+		<h3 style=" font-size: 38.7px; text-align:" >La vita nelle fabbriche era molto dura:<br>
         
     </div>
 	
@@ -205,17 +206,46 @@ Un grande edificio dove lavorano tante persone insieme con le macchine.<br> Chi 
 
 <div class="img-quinta6">
     <img src="immagine/maxresdefault.jpg" class="video-thumb" alt="Copertina video">
-    <video width="500" height="500">
-        <source src="video/video.mp4" type="video/mp4">
+
+    <video>
+        <source src="video/1080p.mp4" type="video/mp4">
         Il tuo browser non supporta il video.
     </video>
+
     <div class="custom-controls">
+        <button class="rewind">⏪</button>
         <button class="play-pause">▶</button>
-        <div class="progress-bar"><div class="progress"></div></div>
+        <button class="forward">⏩</button>
+
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+
+        <span class="time"></span>
+
         <input type="range" class="volume" min="0" max="1" step="0.01" value="1">
+
+        <!-- ⚙️ + MENU -->
+        <div class="res-wrapper">
+            <button class="res-button">⚙️</button>
+
+            <div class="res-menu hidden">
+                <div class="res-option" data-src="video/1080p.mp4">1080p</div>
+                <div class="res-option" data-src="video/720p.mp4">720p</div>
+                <div class="res-option" data-src="video/360p.mp4">360p</div>
+                <div class="res-option" data-src="video/240p.mp4">240p</div>
+                <div class="res-option" data-src="video/144p.mp4">144p</div>
+            </div>
+        </div>
+
         <button class="fullscreen">⛶</button>
     </div>
 </div>
+
+<div class="video-text">
+            <h3>Noccioline #50 - La RIVOLUZIONE INDUSTRIALE spiegata FACILE</h3>
+            <p>Questa è la descrizione o il testo del video. Puoi scrivere tutto ciò che vuoi, anche più righe di testo.</p>
+        </div>
 <div class="muro-invisibile-grande1"></div>
 <script src="js/script1.js"></script>
 </body>
