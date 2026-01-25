@@ -139,15 +139,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
             wrapper.style.position = 'fixed';
             wrapper.style.top = '0';
-            wrapper.style.right = '0';
-            wrapper.style.width = '96vw';
-            wrapper.style.height = '96vh';
+            wrapper.style.right = '10';
+            wrapper.style.width = '70vw';
+            wrapper.style.height = '70vh';
             wrapper.style.padding = '0';
             wrapper.style.borderRadius = '0';
 
-            video.style.width = '96vw';
-            video.style.height = '96vh';
+            video.style.width = '91vw';
+            video.style.height = '92vh';
             video.style.transform = 'scale(1.1)';
+			video.style.position = 'relative';
+            video.style.right = '-4vw';
+			video.style.marginTop = '4vh';
 
             thumb.style.width = '96vw';
             thumb.style.height = '96vh';
@@ -172,6 +175,8 @@ document.addEventListener("DOMContentLoaded", () => {
             video.style.width = '889px';
             video.style.height = '460px';
             video.style.transform = 'scale(1)';
+			 video.style.right = '-0vw';
+			video.style.marginTop = '0vh';
 
             thumb.style.width = '889px';
             thumb.style.height = '460px';
