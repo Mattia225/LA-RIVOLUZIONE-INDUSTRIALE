@@ -540,5 +540,10 @@ video, .thumb {
 .res-option:hover {
     background: rgba(255,255,255,0.2);
 }
-
+span {
+font-family: "Pompiere", Arial, sans-serif;
+}
+p {
+font-family: "Pompiere", Arial, sans-serif;
+}
 
